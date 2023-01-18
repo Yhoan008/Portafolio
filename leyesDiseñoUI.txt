@@ -1,0 +1,12 @@
+1: Von Restorff, en un conjunto el elemento mas resaltado es el mas facilmente recordado 
+
+2: Hick : Las opciones o deciciones del usuario deben ser lo mas simple posible, aligerando la carga cognitiva
+
+3: Zeigarnik : El usuario recuerda las tareas completadas, por eso si hace falta alguna hay que resaltarlo
+
+4: Posicion serial: En una lista el usuario recuerda mas facilmente el primer y el ultimo elemento
+
+5: Region comun : Agrupacion de informacion es importante 
+
+6 : Estudia tipografia
+
