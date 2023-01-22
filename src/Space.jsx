@@ -53,16 +53,6 @@ export default function Space() {
       <Point />
       <Point />
       <Point />
-      <Point />
-      <Point />
-      <Point />
-      <Point />
-      <Point />
-      <Point />
-      <Point />
-      <Point />
-      <Point />
-      <Point />
     </Container>
   );
 }
@@ -81,25 +71,27 @@ let invertY=false;
 function Point() {
   const [countX, setCountX] = useState(Math.round(Math.random()*window.innerWidth));
   const [countY, setCountY] = useState(Math.round(Math.random()*450));
-  const [invertX, setInvertX] = useState(false);
-  const [invertY, setInvertY] = useState(false);
   
   useEffect(() => {
 
+    let invertX = false;
+    let invertY = false;
+
     const intervalId = setInterval(() => {
-      if (!invertX && !invertY) {
-        setCountX((count) => count + 1);
-        setCountY((count) => count + 1);
-      } else if (!invertX && invertY) {
-        setCountX((count) => count + 1);
-        setCountY((count) => count - 1);
-      } else if (invertX && !invertY) {
-        setCountX((count) => count - 1);
-        setCountY((count) => count + 1);
-      } else if (invertX && invertY) {
-        setCountX((count) => count - 1);
-        setCountY((count) => count - 1);
-      }
+      setCountX(count => {
+        if(count >= window.innerWidth) invertX=true;
+        if(count <= 0) invertX=false; 
+
+        if(invertX == false) return count+1;
+        if(invertX ==true) return count-1;
+      });
+      setCountY(count => {
+        if(count >= 450) invertY=true;
+        if(count <= 0) invertY=false; 
+
+        if(invertY == false) return count+1;
+        if(invertY ==true) return count-1;
+      });
 
     });
 
@@ -110,14 +102,8 @@ function Point() {
     
   }, []);
   
-  // if (countX >= window.innerWidth) setInvertX(true);
-  // if (countX <= 0) setInvertX(false);
-  // if (countY >= 450) setInvertY(true);
-  // if (countY <= 0)  setInvertY(false);
-
-  
   const styles = {
-    transform: `translate(${countX}px,${countY}px)`,
+    transform: `translate(${countX}px,${countY}px)`
   };
 
   return <PointStyle style={styles} />;
@@ -125,4 +111,3 @@ function Point() {
 
 
 
-// Se debe adaptar para que se peudan utilizar mas componentes Point 
