@@ -1,16 +1,69 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 
-const Div = styled.div`
+const Contain = styled.div`
   position: relative;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  align-self: center;
-  font-weight: 900;
-  font-size: 3em;
-  margin-left: 100px;
-  width:300px;
-  justify-self: flex-start;
+  width: 600px;
+  height: 40px;
+  text-align: center;
+`;
+
+const Back = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #aaa;
+  filter: opacity(70%);
 `;
 
 export default function Title() {
-  return <Div>Hola, mi nombre es Yhoan y soy desarrollador Front End</Div>;
+  const containStyle = {
+    top: `${170}px`,
+  };
+
+  return (
+    <Contain style={containStyle}>
+      <Back />
+      <Text />
+    </Contain>
+  );
+}
+
+const H2 = styled.h2`
+  position: absolute;
+  width: 100%;
+  font-weight: 900;
+  font-size: 2em;
+  padding: 0;
+  margin: 0;
+`;
+
+const text1 = "Yhoan Moreno";
+const text2 = "Desarrollador Front End";
+const text3 = "Diseñador Web";
+const array = Array.from(text1);
+
+function Text() {
+  const [ind, setInd] = useState(array.length);
+  let invert = false;
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setInd((ind) => {
+        if (ind <= 0) {
+          invert = true;
+        } else if (ind >= array.length) {
+          setTimeout(()=>{invert=false},200);
+        }
+        if (invert == true) return ind + 1;
+        if (invert == false) return ind - 1;
+      });
+    }, 200);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  return <H2>{array.slice(0, ind)}</H2>;
 }
