@@ -16,7 +16,7 @@ const Li = styled.li`
   cursor: pointer;
   padding: 5px;
   &:hover {
-    box-shadow: inset 0 -10px 5px -5px white;
+    box-shadow: inset 0 -10px 5px -5px #718eb0;
   }
 `;
 

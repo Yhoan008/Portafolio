@@ -38,12 +38,9 @@ export default class About extends Component {
             width: "600px",
           }}
         >
-          <H2>Acerca de mi</H2>
+          <H2>Hola, mi nombre es Yhoan</H2>
           <P>
-            Hola, soy Yhoan Moreno, soy Programador front end y diseñador
-            Junior, no tengo experiencia en la industria mas allá de mis
-            proyectos personales, aunque si cuento con unas infinitas ganas de
-            aprender. Actualmente resido en la ciudad de Bogota Colombia.
+            Soy Programador front end y resido en Bogota Colombia, actualmente me dedico a la creacion de mis propios proyectos personales para ampliar mi experiencia en la industria.
           </P>
         </div>
       </Container>

@@ -41,11 +41,19 @@ const H2 = styled.h2`
 const text1 = "Yhoan Moreno";
 const text2 = "Desarrollador Front End";
 const text3 = "Diseñador Web";
-const array = Array.from(text1);
+const array1 = Array.from(text1);
+const array2 = Array.from(text2);
+const array3 = Array.from(text3);
+
+let array = array1;
+let invert = false;
+
+let ind1 = true;
+let ind2 = false;
+let ind3 = false;
 
 function Text() {
-  const [ind, setInd] = useState(array.length);
-  let invert = false;
+  const [ind, setInd] = useState(array1.length);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -53,17 +61,35 @@ function Text() {
         if (ind <= 0) {
           invert = true;
         } else if (ind >= array.length) {
-          setTimeout(()=>{invert=false},200);
+          setTimeout(() => {
+            invert = false;
+          }, 400);
         }
         if (invert == true) return ind + 1;
         if (invert == false) return ind - 1;
       });
-    }, 200);
+    }, 100);
 
     return () => {
       clearInterval(intervalId);
     };
   }, []);
 
-  return <H2>{array.slice(0, ind)}</H2>;
+  if (ind != 0) {
+    return <H2>{array.slice(0, ind)}</H2>;
+  } else {
+    if (ind1 == true) {
+      array = array2;
+      ind1 = false;
+      ind2 = true;
+    } else if (ind2 == true) {
+      array = array3;
+      ind2 = false;
+      ind3 = true;
+    } else if (ind3 == true) {
+      array = array1;
+      ind3 = false;
+      ind1 = true;
+    }
+  }
 }
