@@ -23,9 +23,6 @@ const Img = styled.div`
   width: 300px;
   height: auto;
   margin: auto;
-  left: 0;
-  right: 0;
-  margin: auto;
   border-radius: 50%;
   transition: 0.2s all;
   overflow: hidden;
@@ -40,19 +37,21 @@ export default function Back() {
     height: `${pantalla / 2}px`,
   };
 
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 460) {
+      setHover(true);
+    }
+  });
+
   window.addEventListener("resize", () => {
     setPantalla(window.innerWidth);
   });
 
-  function Hola(){
-    return <div>hola</div>
-  }
-
   return (
     <Container style={containerStyle}>
       <Shadow pantalla={pantalla} hover={hover} />
-      <Head />
-      <Title  pantalla={pantalla} />
+      <Head hover={hover} />
+      <Title pantalla={pantalla} />
       <Img
         onMouseEnter={() => {
           setHover(true);
@@ -73,12 +72,12 @@ const ShadowStyle = styled.div`
 
 function Shadow({ pantalla, hover }) {
   const shadowStyle = {
-    zIndex : `${hover == true ? -10 : 10}`,
-    width: `${pantalla + 80}px`,
-    height: `${pantalla + 80}px`,
+    zIndex: `${hover == true ? -10 : 10}`,
+    width: `${pantalla + 100}px`,
+    height: `${pantalla + 100}px`,
     top: `-${pantalla / 3.4}px`,
     boxShadow: `inset 0 0 0 ${hover == true ? 0 : pantalla / 2}px black`,
   };
 
-  return <ShadowStyle style={shadowStyle}/>;
+  return <ShadowStyle style={shadowStyle} />;
 }

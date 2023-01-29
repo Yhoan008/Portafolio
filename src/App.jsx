@@ -31,7 +31,7 @@ export default function App() {
 
 // Pendientes: 
 
-// Ocultar componente back y que el hover en foto de perfil lo muestre permanentemente
 // Agregar aprendizajes futuros
-// Animacion title
+// 
+// Elegir paleta de colores y tipografias 
 
