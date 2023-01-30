@@ -32,6 +32,7 @@ const ImgStyle = styled.img`
 
 const H2 = styled.h2`
   color: white;
+  font-family: "Lobster", cursive;
 `;
 
 const Ul = styled.ul`
@@ -44,6 +45,7 @@ const Ul = styled.ul`
   justify-content: end;
   padding-left: 0px;
   margin-right: 10px;
+  font-family: "Lilita One", cursive; // titulos
 `;
 
 const Li = styled.li`

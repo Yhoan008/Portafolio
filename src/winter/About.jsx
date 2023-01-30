@@ -21,9 +21,11 @@ const Img = styled.div`
 const H2 = styled.h2`
   color: white;
   font-size: 2.5em;
+  font-family: "Lilita One", cursive; // titulos
 `;
 
 const P = styled.p`
+  font-family: "Fira Sans Condensed", sans-serif;
   color: white;
   font-size: 2em;
 `;
@@ -40,7 +42,9 @@ export default class About extends Component {
         >
           <H2>Hola, mi nombre es Yhoan</H2>
           <P>
-            Soy Programador front end y resido en Bogota Colombia, actualmente me dedico a la creacion de mis propios proyectos personales para ampliar mi experiencia en la industria.
+            Soy Programador front end y resido en Bogota Colombia, actualmente
+            me dedico a la creacion de mis propios proyectos personales para
+            ampliar mi experiencia en la industria.
           </P>
         </div>
       </Container>

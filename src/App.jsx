@@ -12,8 +12,8 @@ const GlobalStyle = createGlobalStyle`
     background-color: black;
     overflow-y: visible;
     overflow-x: hidden;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+    font-family: 'Lilita One', cursive; // titulos
+    font-family: 'Fira Sans Condensed', sans-serif; // Parrafos
   }
 `;
 
@@ -28,10 +28,15 @@ export default function App() {
   );
 }
 
-
-// Pendientes: 
+// Pendientes:
 
 // Agregar aprendizajes futuros
-// 
-// Elegir paleta de colores y tipografias 
+// Expand cards en area de proyectos
+// Elegir paleta de colores y tipografias
+// Progress step con el scroll de la pagina
+// incluir audios interactivos
 
+// Proyectos :
+//  Morf Effect con rick y morty
+// wave form
+// reloj analogico

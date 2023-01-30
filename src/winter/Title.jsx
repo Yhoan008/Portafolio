@@ -36,6 +36,8 @@ const H2 = styled.h2`
   font-size: 2em;
   padding: 0;
   margin: 0;
+  font-family: 'Lilita One', cursive; // titulos
+
 `;
 
 const text1 = "Yhoan Moreno";
