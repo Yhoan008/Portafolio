@@ -10,24 +10,21 @@ const Contain = styled.div`
   padding: 0 50px;
 `;
 
-export default function Skills() {
+export default function Skills({ idiom }) {
   return (
     <Contain>
       <h2
         style={{
-          width: '100%',
-          height: 'auto', 
+          width: "100%",
+          height: "auto",
           textAlign: "center",
         }}
       >
         HABILIDADES
       </h2>
-      <Bar skill="HTML" percent={95} />
-      <Bar skill="CSS" percent={85} />
-      <Bar skill="Javascript" percent={85} />
-      <Bar skill="React" percent={65} />
-      <Bar skill="Git" percent={80} />
-      <Bar skill="Gimp" percent={70} />
+      {idiom.skills.map((skill, index) => (
+        <Bar skill={skill.skill} percent={skill.percent} key={index}/>
+      ))}
     </Contain>
   );
 }

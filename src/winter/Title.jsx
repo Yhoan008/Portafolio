@@ -16,7 +16,7 @@ const Back = styled.div`
   filter: opacity(70%);
 `;
 
-export default function Title() {
+export default function Title({ idiom }) {
   const containStyle = {
     top: `${170}px`,
   };
@@ -24,7 +24,7 @@ export default function Title() {
   return (
     <Contain style={containStyle}>
       <Back />
-      <Text />
+      <Text idiom={idiom} />
     </Contain>
   );
 }
@@ -36,16 +36,12 @@ const H2 = styled.h2`
   font-size: 2em;
   padding: 0;
   margin: 0;
-  font-family: 'Lilita One', cursive; // titulos
-
+  font-family: "Lilita One", cursive; // titulos
 `;
 
-const text1 = "Yhoan Moreno";
-const text2 = "Desarrollador Front End";
-const text3 = "Diseñador Web";
-const array1 = Array.from(text1);
-const array2 = Array.from(text2);
-const array3 = Array.from(text3);
+let array1 = [];
+let array2 = [];
+let array3 = [];
 
 let array = array1;
 let invert = false;
@@ -54,10 +50,14 @@ let ind1 = true;
 let ind2 = false;
 let ind3 = false;
 
-function Text() {
+function Text({ idiom }) {
   const [ind, setInd] = useState(array1.length);
 
   useEffect(() => {
+    array1 = Array.from(idiom.title.title1);
+    array2 = Array.from(idiom.title.title2);
+    array3 = Array.from(idiom.title.title3);
+
     const intervalId = setInterval(() => {
       setInd((ind) => {
         if (ind <= 0) {

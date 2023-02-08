@@ -2,6 +2,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import Back from "./winter/Back";
 import About from "./winter/About";
 import Skills from "./winter/Skills";
+import { idiom } from "./idiom";
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -21,9 +22,9 @@ export default function App() {
   return (
     <>
       <GlobalStyle />
-      <Back />
-      <About />
-      <Skills />
+      <Back idiom={idiom.en} />
+      <About idiom={idiom.en} />
+      <Skills idiom={idiom.en} />
     </>
   );
 }
@@ -32,7 +33,6 @@ export default function App() {
 
 // Agregar aprendizajes futuros
 // Expand cards en area de proyectos
-// Elegir paleta de colores y tipografias
 // Progress step con el scroll de la pagina
 // incluir audios interactivos
 

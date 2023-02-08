@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import dragonIcon from "./../assets/dragonIcon.png";
 
-const Contain = styled.div`
+const Contain = styled.nav`
   position: fixed;
   margin: 0;
   width: 100%;
@@ -60,7 +60,7 @@ const Li = styled.li`
   }
 `;
 
-export default function Head({ hover }) {
+export default function Head({ hover, idiom }) {
   const ulStyle = {
     zIndex: `${hover == true ? 1000 : -100}`,
   };
@@ -71,13 +71,22 @@ export default function Head({ hover }) {
         <Img>
           <ImgStyle src={dragonIcon} alt="Dragon colorfull" />
         </Img>
-        <H2>Yhoan Moreno</H2>
+        <H2>{idiom.navName}</H2>
       </Name>
       <Ul>
-        <Li>Acerca de mi</Li>
-        <Li>Habilidades</Li>
-        <Li>Proyectos</Li>
-        <Li>Contactame</Li>
+        {idiom.navList.map((text, index) => (
+          <Li key={index}>
+            <a
+              href="#"
+              style={{
+                color: "white",
+                textDecoration: "none"
+              }}
+            >
+              {text}
+            </a>
+          </Li>
+        ))}
       </Ul>
     </Contain>
   );

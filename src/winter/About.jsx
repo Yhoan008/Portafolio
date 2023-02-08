@@ -31,6 +31,12 @@ const P = styled.p`
 `;
 
 export default class About extends Component {
+  // constructor() {
+  //   super(props);
+  //   this.state = {
+  //     idiom: this.props.idiom,
+  //   };
+  // }
   render() {
     return (
       <Container>
@@ -40,12 +46,8 @@ export default class About extends Component {
             width: "600px",
           }}
         >
-          <H2>Hola, mi nombre es Yhoan</H2>
-          <P>
-            Soy Programador front end y resido en Bogota Colombia, actualmente
-            me dedico a la creacion de mis propios proyectos personales para
-            ampliar mi experiencia en la industria.
-          </P>
+          <H2>{this.props.idiom.aboutTitle}</H2>
+          <P>{this.props.idiom.aboutDescription}</P>
         </div>
       </Container>
     );

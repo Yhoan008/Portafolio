@@ -21,15 +21,16 @@ const Container = styled.div`
 const Img = styled.div`
   position: absolute;
   width: 300px;
-  height: auto;
+  height: 300px;
   margin: auto;
   border-radius: 50%;
   transition: 0.2s all;
   overflow: hidden;
   z-index: 100;
+  object-fit: contain;
 `;
 
-export default function Back() {
+export default function Back({idiom}) {
   const [pantalla, setPantalla] = useState(window.innerWidth);
   const [hover, setHover] = useState(false);
 
@@ -38,7 +39,7 @@ export default function Back() {
   };
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 460) {
+    if (window.scrollY > 10) {
       setHover(true);
     }
   });
@@ -50,14 +51,14 @@ export default function Back() {
   return (
     <Container style={containerStyle}>
       <Shadow pantalla={pantalla} hover={hover} />
-      <Head hover={hover} />
-      <Title pantalla={pantalla} />
+      <Head hover={hover} idiom={idiom} />
+      <Title pantalla={pantalla} idiom={idiom} />
       <Img
         onMouseEnter={() => {
           setHover(true);
         }}
       >
-        <img src={face} alt="perfil" style={{ width: "100%" }} />
+        <img src={face} alt="perfil" style={{ height:'100%' }} />
       </Img>
     </Container>
   );
