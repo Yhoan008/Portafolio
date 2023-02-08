@@ -1,4 +1,4 @@
-export const idiom = {
+export const idioma = {
   es: {
     navName: "Yhoan Moreno",
     navList: ["Acerca de mi", "Habilidades", "Proyectos", "Contactame"],
@@ -10,6 +10,7 @@ export const idiom = {
     aboutTitle: "Hola, mi nombre es Yhoan",
     aboutDescription:
       "Soy programador front end y resido en Bogota, actualmente me dedico a la creacion de mis propios proyectos personales para ampliar mi experiencia en la industria.",
+    skillsTitle: "HABILIDADES",
     skills: [
       {
         skill: "HTML",
@@ -40,6 +41,7 @@ export const idiom = {
     aboutTitle: "Hi, my name is Yhoan",
     aboutDescription:
       "I am a front end programmer and I live in Bogota, currently I am dedicated to creating my own personal projects to broaden my experience in the industry.",
+    skillsTitle: "SKILLS",
     skills: [
       {
         skill: "HTML",

@@ -1,8 +1,9 @@
+import { useState } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import Back from "./winter/Back";
 import About from "./winter/About";
 import Skills from "./winter/Skills";
-import { idiom } from "./idiom";
+import { idioma } from "./idiom";
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -19,12 +20,23 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default function App() {
+
+  const [idiom , setIdiom] = useState(idioma.es);
+
+  function changeidiom(){
+    if(idiom == idioma.es){
+      setIdiom(idioma.en);
+    }else if(idiom == idioma.en){
+      setIdiom(idioma.es);
+    }
+  }
+
   return (
     <>
       <GlobalStyle />
-      <Back idiom={idiom.en} />
-      <About idiom={idiom.en} />
-      <Skills idiom={idiom.en} />
+      <Back idiom={idiom} changeidiom={changeidiom} />
+      <About idiom={idiom} />
+      <Skills idiom={idiom} />
     </>
   );
 }

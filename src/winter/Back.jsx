@@ -30,7 +30,7 @@ const Img = styled.div`
   object-fit: contain;
 `;
 
-export default function Back({idiom}) {
+export default function Back({idiom,changeidiom}) {
   const [pantalla, setPantalla] = useState(window.innerWidth);
   const [hover, setHover] = useState(false);
 
@@ -51,7 +51,7 @@ export default function Back({idiom}) {
   return (
     <Container style={containerStyle}>
       <Shadow pantalla={pantalla} hover={hover} />
-      <Head hover={hover} idiom={idiom} />
+      <Head hover={hover} idiom={idiom} changeidiom={changeidiom} />
       <Title pantalla={pantalla} idiom={idiom} />
       <Img
         onMouseEnter={() => {

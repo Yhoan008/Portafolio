@@ -20,10 +20,10 @@ export default function Skills({ idiom }) {
           textAlign: "center",
         }}
       >
-        HABILIDADES
+        {idiom.skillsTitle}
       </h2>
       {idiom.skills.map((skill, index) => (
-        <Bar skill={skill.skill} percent={skill.percent} key={index}/>
+        <Bar skill={skill.skill} percent={skill.percent} key={index} />
       ))}
     </Contain>
   );

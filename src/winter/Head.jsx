@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import dragonIcon from "./../assets/dragonIcon.png";
 
@@ -60,7 +61,7 @@ const Li = styled.li`
   }
 `;
 
-export default function Head({ hover, idiom }) {
+export default function Head({ hover, idiom, changeidiom }) {
   const ulStyle = {
     zIndex: `${hover == true ? 1000 : -100}`,
   };
@@ -80,7 +81,7 @@ export default function Head({ hover, idiom }) {
               href="#"
               style={{
                 color: "white",
-                textDecoration: "none"
+                textDecoration: "none",
               }}
             >
               {text}
@@ -88,6 +89,54 @@ export default function Head({ hover, idiom }) {
           </Li>
         ))}
       </Ul>
+      <Idiom idiom={idiom} changeidiom={changeidiom}/>
     </Contain>
+  );
+}
+
+const IdiomButton = styled.button`
+  position: absolute;
+  right: 10px;
+  top: 70px;
+  padding: 0;
+  border-radius: 20px;
+  display: flex;
+  background-color: #d19c8a;
+  cursor: pointer;
+`;
+
+const IdiomText = styled.h3`
+  margin: 4px 4px;
+  padding: 0;
+`;
+
+const IdiomBar = styled.div`
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: #0c3070;
+  border-radius: 50%;
+  transition: 0.5s;
+  /* margin-left: 0%; */
+`;
+
+function Idiom({changeidiom}) {
+  
+  const [margin,setMargin]=useState(false);
+
+  const stylebar={
+    marginLeft:`${margin == false ? 0 : 50}%`
+  }
+  return (
+    <IdiomButton
+      onClick={()=>{
+        changeidiom();
+        setMargin(margin=>!margin);
+      }}
+    >
+      <IdiomBar style={stylebar}></IdiomBar>
+      <IdiomText>es</IdiomText>
+      <IdiomText>en</IdiomText>
+    </IdiomButton>
   );
 }

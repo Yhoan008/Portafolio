@@ -53,11 +53,10 @@ let ind3 = false;
 function Text({ idiom }) {
   const [ind, setInd] = useState(array1.length);
 
+  array1 = Array.from(idiom.title.title1);
+  array2 = Array.from(idiom.title.title2);
+  array3 = Array.from(idiom.title.title3);
   useEffect(() => {
-    array1 = Array.from(idiom.title.title1);
-    array2 = Array.from(idiom.title.title2);
-    array3 = Array.from(idiom.title.title3);
-
     const intervalId = setInterval(() => {
       setInd((ind) => {
         if (ind <= 0) {
