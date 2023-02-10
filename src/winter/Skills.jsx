@@ -7,12 +7,12 @@ const Contain = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   color: white;
-  padding: 0 50px;
+  padding: 40px 50px 0 50px;
 `;
 
 export default function Skills({ idiom }) {
   return (
-    <Contain>
+    <Contain id="skills" >
       <h2
         style={{
           width: "100%",

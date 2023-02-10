@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import dragonIcon from "./../assets/dragonIcon.png";
 
 const Contain = styled.nav`
@@ -68,28 +68,30 @@ export default function Head({ hover, idiom, changeidiom }) {
 
   return (
     <Contain style={ulStyle}>
-      <Name>
-        <Img>
-          <ImgStyle src={dragonIcon} alt="Dragon colorfull" />
-        </Img>
-        <H2>{idiom.navName}</H2>
-      </Name>
+      <a href="#home" style={{ textDecoration: "none" }}>
+        <Name style={{ cursor: "pointer" }}>
+          <Img>
+            <ImgStyle src={dragonIcon} alt="Dragon colorfull" />
+          </Img>
+          <H2>{idiom.navName}</H2>
+        </Name>
+      </a>
       <Ul>
         {idiom.navList.map((text, index) => (
           <Li key={index}>
             <a
-              href="#"
+              href={`#${text.id}`}
               style={{
                 color: "white",
                 textDecoration: "none",
               }}
             >
-              {text}
+              {text.text}
             </a>
           </Li>
         ))}
       </Ul>
-      <Idiom idiom={idiom} changeidiom={changeidiom}/>
+      <Idiom idiom={idiom} changeidiom={changeidiom} />
     </Contain>
   );
 }
@@ -120,18 +122,17 @@ const IdiomBar = styled.div`
   /* margin-left: 0%; */
 `;
 
-function Idiom({changeidiom}) {
-  
-  const [margin,setMargin]=useState(false);
+function Idiom({ changeidiom }) {
+  const [margin, setMargin] = useState(false);
 
-  const stylebar={
-    marginLeft:`${margin == false ? 0 : 50}%`
-  }
+  const stylebar = {
+    marginLeft: `${margin == false ? 0 : 50}%`,
+  };
   return (
     <IdiomButton
-      onClick={()=>{
+      onClick={() => {
         changeidiom();
-        setMargin(margin=>!margin);
+        setMargin((margin) => !margin);
       }}
     >
       <IdiomBar style={stylebar}></IdiomBar>

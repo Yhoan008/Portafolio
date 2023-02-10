@@ -49,7 +49,7 @@ export default function Back({idiom,changeidiom}) {
   });
 
   return (
-    <Container style={containerStyle}>
+    <Container style={containerStyle} id="home">
       <Shadow pantalla={pantalla} hover={hover} />
       <Head hover={hover} idiom={idiom} changeidiom={changeidiom} />
       <Title pantalla={pantalla} idiom={idiom} />

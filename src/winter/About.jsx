@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import winter from "./../assets/winter2.jpeg";
 
-const Container = styled.div`
+const Container = styled.section`
   padding: 50px;
   display: flex;
   justify-content: space-between;
@@ -39,7 +39,7 @@ export default class About extends Component {
   // }
   render() {
     return (
-      <Container>
+      <Container id="about" >
         <Img />
         <div
           style={{

@@ -1,7 +1,24 @@
 export const idioma = {
   es: {
     navName: "Yhoan Moreno",
-    navList: ["Acerca de mi", "Habilidades", "Proyectos", "Contactame"],
+    navList:[
+      {
+        id:"about",
+        text:"Acerca de mi"
+      },
+      {
+        id:"skills",
+        text:"Habilidades"
+      },
+      {
+        id:"proyects",
+        text:"Proyectos"
+      },
+      {
+        id:"contact",
+        text:"Contactame"
+      }
+    ] ,
     title: {
       title1: "Yhoan Moreno",
       title2: "Desarrollador Front End",
@@ -32,7 +49,24 @@ export const idioma = {
   },
   en: {
     navName: "Yhoan Moreno",
-    navList: ["About", "Skills", "Proyects", "Contact"],
+    navList:[
+      {
+        id:"about",
+        text:"About"
+      },
+      {
+        id:"skills",
+        text:"Skills"
+      },
+      {
+        id:"proyects",
+        text:"Proyects"
+      },
+      {
+        id:"contact",
+        text:"Contact"
+      }
+    ] ,
     title: {
       title1: "Yhoan Moreno",
       title2: "Front End Developer",

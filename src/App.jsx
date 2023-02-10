@@ -17,6 +17,9 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Lilita One', cursive; // titulos
     font-family: 'Fira Sans Condensed', sans-serif; // Parrafos
   }
+  html{
+    scroll-behavior: smooth;
+  }
 `;
 
 export default function App() {
