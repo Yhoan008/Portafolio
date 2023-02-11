@@ -12,6 +12,7 @@ const Contain = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index:1500;
 `;
 
 const Name = styled.div`
@@ -63,7 +64,7 @@ const Li = styled.li`
 
 export default function Head({ hover, idiom, changeidiom }) {
   const ulStyle = {
-    zIndex: `${hover == true ? 1000 : -100}`,
+    zIndex: `${hover == true ? 10000 : -100}`,
   };
 
   return (

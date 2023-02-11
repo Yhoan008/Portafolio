@@ -3,10 +3,12 @@ import styled, { createGlobalStyle } from "styled-components";
 import Back from "./winter/Back";
 import About from "./winter/About";
 import Skills from "./winter/Skills";
+import Proyects from "./winter/Proyects";
 import { idioma } from "./idiom";
 
 const GlobalStyle = createGlobalStyle`
   body{
+    position:relative;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -40,6 +42,7 @@ export default function App() {
       <Back idiom={idiom} changeidiom={changeidiom} />
       <About idiom={idiom} />
       <Skills idiom={idiom} />
+      <Proyects/>
     </>
   );
 }
@@ -47,6 +50,8 @@ export default function App() {
 // Pendientes:
 
 // Agregar aprendizajes futuros
+// About poner foto animada
+// hacer efecto de nubes en skills
 // Expand cards en area de proyectos
 // Progress step con el scroll de la pagina
 // incluir audios interactivos

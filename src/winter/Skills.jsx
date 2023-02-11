@@ -1,26 +1,74 @@
-import React, { Component } from "react";
+import React, { Component,useEffect,useState } from "react";
+import Clouds from "./Clouds";
 import styled from "styled-components";
+import { color } from "./../color";
 import { BiBeenHere } from "react-icons/bi";
+import titlecloud from './../assets/titlecloud.png';
 
 const Contain = styled.div`
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   color: white;
-  padding: 40px 50px 0 50px;
+  padding: 0;
+  background-color: ${color.blue};
+`;
+
+const P = styled.div`
+  display: block;
+  width: 20%;
+  padding: 3% 0;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-image: url(${titlecloud});
+  background-repeat: no-repeat;
+  background-size: 100%;
+  overflow: visible;
+
 `;
 
 export default function Skills({ idiom }) {
+
+  const [titletop, setTitletop] = useState("-228");
+
+  const styleTitle = {
+    position: "relative",
+    top:`${titletop}px`,
+    width: "100%",
+    height: "150px",
+    textAlign: "center",
+    marginTop: "200px",
+    zIndex: "150",
+    color: "black",
+    display: "flex",
+    justifyContent: "center",
+    transition:"1s",
+    fontFamily:"Lilita One,cursive"
+  };
+
+  //700 = -220
+  //929 = 0
+
+  // 229 = 220
+
+  useEffect(()=>{
+    window.addEventListener("scroll", () => {
+      if(window.scrollY < 700){
+        setTitletop("-228");
+      }else if (window.scrollY > 700 && window.scrollY < 928) {
+        setTitletop(`${window.scrollY-928}`);
+      } else if (window.scrollY > 928) {
+        setTitletop("0");
+      }
+    });
+  })
+
   return (
-    <Contain id="skills" >
-      <h2
-        style={{
-          width: "100%",
-          height: "auto",
-          textAlign: "center",
-        }}
-      >
-        {idiom.skillsTitle}
+    <Contain id="skills">
+      <Clouds></Clouds>
+      <h2 style={styleTitle}>
+        <P><p style={{fontSize:"100%"}}>{idiom.skillsTitle}</p></P>
       </h2>
       {idiom.skills.map((skill, index) => (
         <Bar skill={skill.skill} percent={skill.percent} key={index} />
@@ -28,12 +76,6 @@ export default function Skills({ idiom }) {
     </Contain>
   );
 }
-
-const ContainerSkill = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`;
 
 const Skill = styled.h2`
   margin-bottom: 40px;

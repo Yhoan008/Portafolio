@@ -3,9 +3,21 @@ import styled from "styled-components";
 import winter from "./../assets/winter2.jpeg";
 
 const Container = styled.section`
+  position: relative;
   padding: 50px;
   display: flex;
   justify-content: space-between;
+  background-color: black;
+z-index: 1400;
+`;
+
+const Margin = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 50px 50px black;
 `;
 
 const Img = styled.div`
@@ -39,7 +51,8 @@ export default class About extends Component {
   // }
   render() {
     return (
-      <Container id="about" >
+      <Container id="about">
+        <Margin />
         <Img />
         <div
           style={{
