@@ -4,6 +4,7 @@ import dragonIcon from "./../assets/dragonIcon.png";
 
 const Contain = styled.nav`
   position: fixed;
+  top: 0;
   margin: 0;
   width: 100%;
   height: 60px;

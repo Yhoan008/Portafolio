@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 const Contain = styled.div`
   position: relative;
-  width: 600px;
-  height: 40px;
-  text-align: center;
+  width: auto;
+  height: auto;
+  margin-bottom:0%;
 `;
 
 const Back = styled.div`
@@ -14,15 +14,14 @@ const Back = styled.div`
   height: 100%;
   background-color: #aaa;
   filter: opacity(70%);
+  border-radius:10px;
+  outline:10px solid #aaa;
 `;
 
 export default function Title({ idiom }) {
-  const containStyle = {
-    top: `${170}px`,
-  };
 
   return (
-    <Contain style={containStyle}>
+    <Contain>
       <Back />
       <Text idiom={idiom} />
     </Contain>
@@ -30,13 +29,14 @@ export default function Title({ idiom }) {
 }
 
 const H2 = styled.h2`
-  position: absolute;
-  width: 100%;
+  position: relative;
   font-weight: 900;
   font-size: 2em;
   padding: 0;
+  max-width: 300px;
   margin: 0;
   font-family: "Lilita One", cursive; // titulos
+  text-align: center;
 `;
 
 let array1 = [];

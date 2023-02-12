@@ -12,25 +12,33 @@ const Container = styled.div`
   background-repeat: no-repeat;
   background-size: 100%;
   box-shadow: inset 0 0 50px 50px black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-around;
+  @media (max-width:1000px){
+    flex-direction: row;
+  }
 `;
+
 
 const Img = styled.div`
   position: absolute;
-  width: 300px;
-  height: 300px;
-  margin: auto;
+  width: auto;
+  height: 50%;
   border-radius: 50%;
   transition: 0.2s all;
   overflow: hidden;
   z-index: 100;
-  object-fit: contain;
+  margin-top:-10%;
+  @media (max-width:1000px){
+    margin-top:0;
+    margin-right:35%;
+  }
 `;
 
-export default function Back({idiom,changeidiom}) {
+export default function Back({ idiom, changeidiom }) {
   const [pantalla, setPantalla] = useState(window.innerWidth);
   const [hover, setHover] = useState(false);
 
@@ -52,14 +60,15 @@ export default function Back({idiom,changeidiom}) {
     <Container style={containerStyle} id="home">
       <Shadow pantalla={pantalla} hover={hover} />
       <Head hover={hover} idiom={idiom} changeidiom={changeidiom} />
-      <Title pantalla={pantalla} idiom={idiom} />
+      <div></div>
       <Img
         onMouseEnter={() => {
           setHover(true);
         }}
       >
-        <img src={face} alt="perfil" style={{ height:'100%' }} />
+        <img src={face} alt="perfil" style={{ height: "100%" }} />
       </Img>
+      <Title pantalla={pantalla} idiom={idiom} />
     </Container>
   );
 }
