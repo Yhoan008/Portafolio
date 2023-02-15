@@ -34,7 +34,7 @@ const Img = styled.div`
   margin-top:-10%;
   @media (max-width:1000px){
     margin-top:0;
-    margin-right:35%;
+    margin-right:45%;
   }
 `;
 
@@ -78,6 +78,10 @@ const ShadowStyle = styled.div`
   transition: 0.5s;
   border-radius: 50%;
   z-index: 10;
+  @media (max-width:1000px){
+    left:-30%;
+    transform:scale(130%);
+  }
 `;
 
 function Shadow({ pantalla, hover }) {
@@ -86,7 +90,7 @@ function Shadow({ pantalla, hover }) {
     width: `${pantalla + 100}px`,
     height: `${pantalla + 100}px`,
     top: `-${pantalla / 3.4}px`,
-    boxShadow: `inset 0 0 0 ${hover == true ? 0 : pantalla / 2}px black`,
+    boxShadow: `inset 0 0 0 ${hover == true ? 0 : pantalla / 2}px black`
   };
 
   return <ShadowStyle style={shadowStyle} />;

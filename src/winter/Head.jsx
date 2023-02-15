@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Navbutton from "./Navbutton";
 import styled, { keyframes } from "styled-components";
 import dragonIcon from "./../assets/dragonIcon.png";
 
@@ -7,17 +8,17 @@ const Contain = styled.nav`
   top: 0;
   margin: 0;
   width: 100%;
-  height: 60px;
-  align-self: flex-start;
+  height:70px;
   backdrop-filter: blur(2rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index:1500;
+  z-index: 1500;
 `;
 
 const Name = styled.div`
   display: flex;
+  width:200px;
   margin: 0 20px;
 `;
 
@@ -38,31 +39,6 @@ const H2 = styled.h2`
   font-family: "Lobster", cursive;
 `;
 
-const Ul = styled.ul`
-  position: relative;
-  list-style: none;
-  display: flex;
-  width: 50%;
-  height: 100%;
-  align-items: center;
-  justify-content: end;
-  padding-left: 0px;
-  margin-right: 10px;
-  font-family: "Lilita One", cursive; // titulos
-`;
-
-const Li = styled.li`
-  position: relative;
-  font-size: 1.2em;
-  color: white;
-  cursor: pointer;
-  padding: 5px;
-  margin-left: 10px;
-  &:hover {
-    text-decoration-line: line-through;
-  }
-`;
-
 export default function Head({ hover, idiom, changeidiom }) {
   const ulStyle = {
     zIndex: `${hover == true ? 10000 : -100}`,
@@ -78,68 +54,8 @@ export default function Head({ hover, idiom, changeidiom }) {
           <H2>{idiom.navName}</H2>
         </Name>
       </a>
-      <Ul>
-        {idiom.navList.map((text, index) => (
-          <Li key={index}>
-            <a
-              href={`#${text.id}`}
-              style={{
-                color: "white",
-                textDecoration: "none",
-              }}
-            >
-              {text.text}
-            </a>
-          </Li>
-        ))}
-      </Ul>
-      <Idiom idiom={idiom} changeidiom={changeidiom} />
+      <Navbutton idiom={idiom} changeidiom={changeidiom} />
     </Contain>
   );
 }
 
-const IdiomButton = styled.button`
-  position: absolute;
-  right: 10px;
-  top: 70px;
-  padding: 0;
-  border-radius: 20px;
-  display: flex;
-  background-color: #d19c8a;
-  cursor: pointer;
-`;
-
-const IdiomText = styled.h3`
-  margin: 4px 4px;
-  padding: 0;
-`;
-
-const IdiomBar = styled.div`
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  background-color: #0c3070;
-  border-radius: 50%;
-  transition: 0.5s;
-  /* margin-left: 0%; */
-`;
-
-function Idiom({ changeidiom }) {
-  const [margin, setMargin] = useState(false);
-
-  const stylebar = {
-    marginLeft: `${margin == false ? 0 : 50}%`,
-  };
-  return (
-    <IdiomButton
-      onClick={() => {
-        changeidiom();
-        setMargin((margin) => !margin);
-      }}
-    >
-      <IdiomBar style={stylebar}></IdiomBar>
-      <IdiomText>es</IdiomText>
-      <IdiomText>en</IdiomText>
-    </IdiomButton>
-  );
-}

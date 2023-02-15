@@ -30,15 +30,19 @@ export const idioma = {
     skillsTitle: "HABILIDADES",
     skills: [
       {
+        id:"html",
         skill: "HTML"
       },
       {
+        id:"CSS",
         skill: "CSS"
       },
       {
+        id:"javascript",
         skill: "Javascript"
       },
       {
+        id:"react",
         skill: "React"
       },
     ],
@@ -74,20 +78,20 @@ export const idioma = {
     skillsTitle: "SKILLS",
     skills: [
       {
-        skill: "HTML",
-        percent: 95,
+        id:"html",
+        skill: "HTML"
       },
       {
-        skill: "CSS",
-        percent: 85,
+        id:"CSS",
+        skill: "CSS"
       },
       {
-        skill: "Javascript",
-        percent: 85,
+        id:"javascript",
+        skill: "Javascript"
       },
       {
-        skill: "React",
-        percent: 70,
+        id:"react",
+        skill: "React"
       },
     ],
   },

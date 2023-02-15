@@ -5,7 +5,7 @@ const Contain = styled.div`
   position: relative;
   width: auto;
   height: auto;
-  margin-bottom:0%;
+  margin-bottom:-4%;
 `;
 
 const Back = styled.div`

@@ -10,20 +10,13 @@ const Contain = styled.div`
   flex-direction: column;
   padding: 0;
   width: 100%;
-  border:2px solid red;
-  @media (min-width:800px) {
-    
-  }
 `;
 
 const Cloud = styled.div`
   width: 100%;
   position: relative;
   transition: 1s;
-  border:2px solid blue;
 `;
-
-const incremento = 5.66666;
 
 export default class Clouds extends Component {
   constructor(props) {
@@ -38,31 +31,31 @@ export default class Clouds extends Component {
 
   componentDidMount() {
     window.addEventListener("scroll", () => {
-      if (window.scrollY < 750) {
+      if (window.scrollY < 730) {
         // 700
         this.setState({
           midlecloud: `-140`,
-          bottomcloud: `-220`,
+          bottomcloud: `-250`,
         });
-      } else if (window.scrollY > 750 && window.scrollY < 1300) {
+      } else if (window.scrollY > 730 && window.scrollY < 790) {
         this.setState({
-          midlecloud: `${window.scrollY - 840}`,
-          bottomcloud: `${(window.scrollY - 898) * incremento}`,
+          midlecloud: `${window.scrollY - 870}`,
+          bottomcloud: `${(window.scrollY - 1000)*(2/3)}`,
         });
-      } else if (window.scrollY > 1300) {
+      } else if (window.scrollY > 810) {
         this.setState({
-          midlecloud: "28",
-          bottomcloud: "170",
+          midlecloud: "-80",
+          bottomcloud: "-160",
         });
       }
     });
   }
 
-  // 550
+  // 2/3 = x
+
+  
 
   render() {
-
-    console.log(window.scrollY)
 
     const styleMidle = {
       transform:`translate(0,${this.state.midlecloud}%)`,
@@ -74,10 +67,10 @@ export default class Clouds extends Component {
     const stylebottom = {
       transform:`translate(0,${this.state.bottomcloud}%)`,
       zIndex: "10",
-      filter: "opacity(1)",
+      filter: "opacity(1)"
     };
 
-    // bottom cloud min -220% max -150
+    // bottom cloud min -220% max -160
 
     const Img = styled.img`
       width: 100%;

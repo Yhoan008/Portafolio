@@ -7,7 +7,6 @@ import titlecloud from "./../assets/titlecloud.png";
 const Contain = styled.div`
   position: relative;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
   color: white;
   padding: 0;
@@ -44,19 +43,26 @@ const P = styled.div`
   background-size: 100%;
   animation-name: ${animatecloud};
   animation-duration: 10s;
-  animation-iteration-count:infinite;
+  animation-iteration-count: infinite;
+`;
+
+const Skillcontainer = styled.div`
+  width: 100%;
+  position: absolute;
+  margin-top: 50%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 `;
 
 export default function Skills({ idiom }) {
-  const [titletop, setTitletop] = useState("-228");
+  const [titletop, setTitletop] = useState("0");
 
   const styleTitle = {
-    position: "relative",
-    top: `${titletop}px`,
+    position: "absolute",
+    top: `${titletop}%`,
     width: "100%",
     height: "150px",
     textAlign: "center",
-    marginTop: "250px",
     zIndex: "150",
     color: "black",
     display: "flex",
@@ -67,15 +73,17 @@ export default function Skills({ idiom }) {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.scrollY < 700) {
-        setTitletop("-228");
-      } else if (window.scrollY > 700 && window.scrollY < 928) {
-        setTitletop(`${window.scrollY - 928}`);
-      } else if (window.scrollY > 928) {
+      if (window.scrollY < 730) {
         setTitletop("0");
+      } else if (window.scrollY > 730 && window.scrollY < 810) {
+        setTitletop(`${(window.scrollY - 730) * (3 / 16)}`);
+      } else if (window.scrollY > 810) {
+        setTitletop(`15`);
       }
     });
   });
+
+  // 15x = 80
 
   return (
     <Contain id="skills">
@@ -85,9 +93,11 @@ export default function Skills({ idiom }) {
           <p style={{ fontSize: "100%" }}>{idiom.skillsTitle}</p>
         </P>
       </h2>
-      {idiom.skills.map((skill, index) => (
-        <Bar skill={skill.skill} key={index} />
-      ))}
+      <Skillcontainer>
+        {idiom.skills.map((skill, index) => (
+          <Bar skill={skill.skill} key={index} />
+        ))}
+      </Skillcontainer>
     </Contain>
   );
 }
@@ -97,12 +107,15 @@ const Skill = styled.h2`
   font-size: 1.3em;
 `;
 
-function Bar({ skill }) {
 
+function Bar({ skill }) {
   return (
     <div
       style={{
-        margin: "200px 50px",
+        position: "relative",
+        border: "2px solid red",
+        display: "flex",
+        justifyContent: "center",
       }}
     >
       <Skill>{skill}</Skill>
