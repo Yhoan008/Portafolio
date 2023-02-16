@@ -31,20 +31,29 @@ export const idioma = {
     skills: [
       {
         id:"html",
-        skill: "HTML"
+        skill: "HTML",
+        dir:"https://w7.pngwing.com/pngs/201/90/png-transparent-logo-html-html5-thumbnail.png"
       },
       {
         id:"CSS",
-        skill: "CSS"
+        skill: "CSS",
+        dir:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1wgBEjC8XwQOCNjFFD0n5NXAVGgUSs6YmHA&usqp=CAU"
       },
       {
         id:"javascript",
-        skill: "Javascript"
+        skill: "Javascript",
+        dir:"https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
       },
       {
         id:"react",
-        skill: "React"
+        skill: "React",
+        dir:"https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png"
       },
+      {
+        id:"linux",
+        skill:"Linux",
+        dir:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtqir0BP9vIZHy-Pvm4gdgy48MhZC3ufnBVA&usqp=CAU"
+      }
     ],
   },
   en: {
@@ -79,20 +88,29 @@ export const idioma = {
     skills: [
       {
         id:"html",
-        skill: "HTML"
+        skill: "HTML",
+        dir:"https://w7.pngwing.com/pngs/201/90/png-transparent-logo-html-html5-thumbnail.png"
       },
       {
         id:"CSS",
-        skill: "CSS"
+        skill: "CSS",
+        dir:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1wgBEjC8XwQOCNjFFD0n5NXAVGgUSs6YmHA&usqp=CAU"
       },
       {
         id:"javascript",
-        skill: "Javascript"
+        skill: "Javascript",
+        dir:"https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
       },
       {
         id:"react",
-        skill: "React"
+        skill: "React",
+        dir:"https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png"
       },
+      {
+        id:"linux",
+        skill:"Linux",
+        dir:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtqir0BP9vIZHy-Pvm4gdgy48MhZC3ufnBVA&usqp=CAU"
+      }
     ],
   },
 };

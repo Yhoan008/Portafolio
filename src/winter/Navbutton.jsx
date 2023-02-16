@@ -42,7 +42,7 @@ const Li = styled.li`
     text-decoration-line: line-through;
   }
   @media (max-width: 1000px) {
-    padding:40px 0;
+    padding: 40px 0;
     &:hover {
       background-color: ${color.red};
     }
@@ -119,13 +119,12 @@ function Minnav({ idiom, changeidiom }) {
 
 const IdiomButton = styled.button`
   position: absolute;
-  right: 10px;
+  right: 0px;
   padding: 0;
-  top: 60px;
+  top: 70px;
   border-radius: 20px;
   background-color: #d19c8a;
   cursor: pointer;
-  outline: 2px solid red;
   margin: 15px;
   @media (max-width: 1000px) {
     position: relative;
@@ -151,7 +150,7 @@ const IdiomBar = styled.div`
 function Idiom({ changeidiom, active }) {
   const [margin, setMargin] = useState(false);
   const style = {
-    display: `${active == false ? "none" : "flex"}`,
+    display: `${active == false && window.innerWidth < 1000 ? "none" : "flex"}`,
   };
   const stylebar = {
     marginLeft: `${margin == false ? 0 : 50}%`,

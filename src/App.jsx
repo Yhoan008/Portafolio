@@ -25,13 +25,12 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default function App() {
+  const [idiom, setIdiom] = useState(idioma.es);
 
-  const [idiom , setIdiom] = useState(idioma.es);
-
-  function changeidiom(){
-    if(idiom == idioma.es){
+  function changeidiom() {
+    if (idiom == idioma.es) {
       setIdiom(idioma.en);
-    }else if(idiom == idioma.en){
+    } else if (idiom == idioma.en) {
       setIdiom(idioma.es);
     }
   }

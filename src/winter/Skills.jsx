@@ -9,8 +9,11 @@ const Contain = styled.div`
   display: flex;
   justify-content: space-around;
   color: white;
-  padding: 0;
   background-color: ${color.blueDark};
+  padding-bottom: 100px;
+  @media (max-width: 1000px) {
+    padding-bottom: 400px;
+  }
 `;
 
 const animatecloud = keyframes`
@@ -50,8 +53,9 @@ const Skillcontainer = styled.div`
   width: 100%;
   position: absolute;
   margin-top: 50%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 `;
 
 export default function Skills({ idiom }) {
@@ -95,30 +99,97 @@ export default function Skills({ idiom }) {
       </h2>
       <Skillcontainer>
         {idiom.skills.map((skill, index) => (
-          <Bar skill={skill.skill} key={index} />
+          <Bar skill={skill} key={index} />
         ))}
       </Skillcontainer>
     </Contain>
   );
 }
 
-const Skill = styled.h2`
-  margin-bottom: 40px;
-  font-size: 1.3em;
+const borderanimate = keyframes`
+  0%{
+    transform:rotate(0deg);
+  }
+  25%{
+    transform:rotate(90deg);
+  }
+  50%{
+    transform:rotate(180deg);
+  }
+  75%{
+    transform:rotate(270deg);
+  }
+  100%{
+    transform:rotate(360deg);
+  }
 `;
 
+const Skillcontain = styled.div`
+  position: relative;
+  background-color: ${color.blueLight};
+  border-radius: 20px;
+  margin: 20px 40px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 1000px) {
+    &:hover {
+      transform: scale(110%);
+    }
+    &:hover span {
+      background: linear-gradient(to left, ${color.orange}, ${color.blue});
+      animation: 2s ${borderanimate} infinite;
+    }
+  }
+`;
+
+const Back = styled.span`
+  position: absolute;
+  z-index: 10;
+  width: 120%;
+  height: 80%;
+  @media (max-width:1000px) {
+    background: linear-gradient(to left, ${color.orange}, ${color.blue});
+    animation: 2s ${borderanimate} infinite;
+  }
+`;
+
+const Skill = styled.h2`
+  margin-bottom: 40px;
+  font-size: 2em;
+  padding: 0 30px;
+`;
+
+const Img = styled.div`
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+`;
 
 function Bar({ skill }) {
   return (
-    <div
-      style={{
-        position: "relative",
-        border: "2px solid red",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      <Skill>{skill}</Skill>
-    </div>
+    <Skillcontain>
+      <Back />
+      <div
+        style={{
+          position: "relative",
+          zIndex: "100",
+          margin: "4px",
+          backgroundColor: `${color.blueLight}`,
+          display: "flex",
+          padding: "10px 20px",
+          borderRadius: "20px",
+        }}
+      >
+        <Img>
+          <img src={skill.dir} alt="logo" style={{ height: "100%" }} />
+        </Img>
+        <Skill>{skill.skill}</Skill>
+      </div>
+    </Skillcontain>
   );
 }
