@@ -1,12 +1,13 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import tuerca from "./../assets/tuerca.png"
+import tuerca from "./../assets/tuerca.png";
 
 const Contain = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
   padding: 20px;
+  box-sizing: border-box;
   background-color: gray;
   display: flex;
   flex-direction: column;
@@ -33,17 +34,19 @@ const iconanimation = keyframes`
 `;
 
 const Div = styled.div`
-    animation: 10s ${iconanimation} infinite;
+  width:20%;
+  animation: 10s ${iconanimation} infinite;
 `;
 
 export default function Wait() {
-  
   return (
     <Contain>
-        <h1 style={{fontSize:"3em",marginBottom:"100px"}} >En construcción ... </h1>
+      <p style={{ fontSize: "3em", marginBottom: "100px" }}>
+        En construcción ...{" "}
+      </p>
       <Div>
-        <img src={tuerca} alt="setting" />
-      </Div >
+        <img src={tuerca} alt="setting" style={{width:"100%"}} />
+      </Div>
     </Contain>
   );
 }

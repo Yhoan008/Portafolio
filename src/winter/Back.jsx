@@ -20,6 +20,9 @@ const Container = styled.div`
   @media (max-width:1000px){
     flex-direction: row;
   }
+  @media (max-width:650px){
+    height:1000px
+  }
 `;
 
 
@@ -35,6 +38,9 @@ const Img = styled.div`
   @media (max-width:1000px){
     margin-top:0;
     margin-right:45%;
+  }
+  @media (max-width:650px){
+    display:none;
   }
 `;
 
@@ -60,7 +66,7 @@ export default function Back({ idiom, changeidiom }) {
     <Container style={containerStyle} id="home">
       <Shadow pantalla={pantalla} hover={hover} />
       <Head hover={hover} idiom={idiom} changeidiom={changeidiom} />
-      <div></div>
+      {window.innerWidth <= 650 ? <></>:<div/>}
       <Img
         onMouseEnter={() => {
           setHover(true);

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Clouds from "./Clouds";
+import Proyects from "./Proyects";
 import styled, { keyframes } from "styled-components";
 import { color } from "./../color";
 import titlecloud from "./../assets/titlecloud.png";
@@ -7,13 +8,9 @@ import titlecloud from "./../assets/titlecloud.png";
 const Contain = styled.div`
   position: relative;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   color: white;
   background-color: ${color.blueDark};
-  padding-bottom: 100px;
-  @media (max-width: 1000px) {
-    padding-bottom: 400px;
-  }
 `;
 
 const animatecloud = keyframes`
@@ -35,24 +32,10 @@ const animatecloud = keyframes`
   }
 `;
 
-const P = styled.div`
-  display: block;
-  width: 20%;
-  padding: 3% 0;
-  box-sizing: border-box;
-  border-radius: 20px;
-  background-image: url(${titlecloud});
-  background-repeat: no-repeat;
-  background-size: 100%;
-  animation-name: ${animatecloud};
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-`;
-
 const Skillcontainer = styled.div`
   width: 100%;
-  position: absolute;
-  margin-top: 50%;
+  position: relative;
+  margin-top: -45%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -74,7 +57,6 @@ export default function Skills({ idiom }) {
     transition: "1s",
     fontFamily: "Lilita One,cursive",
   };
-
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY < 730) {
@@ -92,17 +74,45 @@ export default function Skills({ idiom }) {
   return (
     <Contain id="skills">
       <Clouds></Clouds>
-      <h2 style={styleTitle}>
-        <P>
-          <p style={{ fontSize: "100%" }}>{idiom.skillsTitle}</p>
-        </P>
-      </h2>
+      <div style={styleTitle}>
+        <CloudMove title={idiom.skillsTitle} />
+      </div>
       <Skillcontainer>
         {idiom.skills.map((skill, index) => (
           <Bar skill={skill} key={index} />
         ))}
       </Skillcontainer>
+      <Proyects idiom={idiom} />
     </Contain>
+  );
+}
+
+const P = styled.div`
+  display: block;
+  width: 20%;
+  padding: 3% 0;
+  background-image: url(${titlecloud});
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation-name: ${animatecloud};
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+`;
+
+export function CloudMove(props) {
+  return (
+    <P>
+      <p
+        style={{
+          textAlign: "center",
+          color: "black",
+          fontFamily: "Lilita One,cursive",
+          fontSize:"1.5em"
+        }}
+      >
+        {props.title}
+      </p>
+    </P>
   );
 }
 
@@ -149,7 +159,7 @@ const Back = styled.span`
   z-index: 10;
   width: 120%;
   height: 80%;
-  @media (max-width:1000px) {
+  @media (max-width: 1000px) {
     background: linear-gradient(to left, ${color.orange}, ${color.blue});
     animation: 2s ${borderanimate} infinite;
   }

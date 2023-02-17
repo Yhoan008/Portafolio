@@ -41,7 +41,6 @@ export default function App() {
       <Back idiom={idiom} changeidiom={changeidiom} />
       <About idiom={idiom} />
       <Skills idiom={idiom} />
-      <Proyects/>
     </>
   );
 }
