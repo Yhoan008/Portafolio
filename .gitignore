@@ -8,6 +8,14 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+public
+src
+index.html
+leyesDiseñoUI.txt
+package-lock.json
+package.json
+vite.config.js
+vite.config.js.timestamp-1673919139646.mjs
 *.local
 
 # Editor directories and files
