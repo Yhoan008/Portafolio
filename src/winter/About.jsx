@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
 import perfil from "./../assets/perfilFoto.png";
-import { color } from "../color";
+import alas from "./../assets/alasNeon.png";
 
 const Container = styled.section`
   position: relative;
   width: 100%;
-  height: 100%;
   padding: 50px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background-color: black;
   z-index: 1400;
@@ -30,76 +28,40 @@ const Margin = styled.div`
 
 const Img = styled.div`
   position: relative;
-  padding: 40px;
-  box-sizing: border-box;
-`;
-
-const rotate1 = keyframes`
-  0%{
-    transform:rotate(0deg);
-  }
-  25%{
-    transform:rotate(90deg);
-  }
-  50%{
-    transform:rotate(180deg);
-  }
-  75%{
-    transform:rotate(270deg);
-  }
-  100%{
-    transform:rotate(360deg);
-  }
-`;
-const rotate2 = keyframes`
-  0%{
-    transform:rotate(360deg);
-  }
-  25%{
-    transform:rotate(270deg);
-  }
-  50%{
-    transform:rotate(180deg);
-  }
-  75%{
-    transform:rotate(90deg);
-  }
-  100%{
-    transform:rotate(0deg);
+  width: 50%;
+  height: 300px;
+  padding: 50px 0px;
+  flex-shrink: 0;
+  display:flex;
+  @media (max-width:600px){
+    width:100%;
   }
 `;
 
 const Fond1 = styled.div`
   position: absolute;
   top: 20%;
-  left: 10%;
+  left: 14%;
   width: 60%;
   height: 60%;
   border-radius: 50% 20%;
-  background-color: ${color.orange};
+  background-color: #06d5e5;
   filter: opacity(50%);
-  animation: 5s ${rotate1} infinite;
-  filter: blur(3rem);
+  filter: blur(5rem);
 `;
 
 const Fond2 = styled.div`
+  height: 100%;
   position: absolute;
-  top: 20%;
-  left: 10%;
-  width: 60%;
-  height: 60%;
-  border-radius: 20% 50%;
-  background-color: ${color.blueLight};
-  filter: opacity(50%);
-  animation: 5s ${rotate2} infinite;
-  filter: blur(5rem);
+  top: -2%;
+  left: 12%;
 `;
 
 const Textcontain = styled.div`
   position: relative;
   box-sizing: border-box;
-  padding: 30px 100px;
-  @media (max-width:730px){
+  padding: 30px 10px;
+  @media (max-width: 730px) {
     padding: 30px 10px;
   }
 `;
@@ -113,26 +75,54 @@ const H2 = styled.h2`
 
 const P = styled.p`
   display: block;
+  width: 100%;
   font-family: "Fira Sans Condensed", sans-serif;
   color: white;
   font-size: 2em;
 `;
 // 368 502
 export default class About extends Component {
+  constructor() {
+    super();
+    this.state = {
+      neon: "none",
+    };
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      console.log("hola");
+      this.setState({ neon: "block" });
+      setTimeout(() => {
+        this.setState({ neon: "none" });
+      }, 100);
+      setTimeout(() => {
+        this.setState({ neon: "block" });
+      }, 200);
+      setTimeout(() => {
+        this.setState({ neon: "none" });
+      }, 2000);
+    }, 4000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
   render() {
     return (
       <Container id="about">
         <Margin />
         <Img>
+          <Fond2 style={{ display: `${this.state.neon}` }}>
+            <img src={alas} alt="alasNeon" style={{ height: "100%" }} />
+          </Fond2>
           <Fond1 />
-          <Fond2 />
-          <div
-            style={{ width: "368px", height: "502px", position: "relative" }}
-          >
+          <div style={{ height: "100%", position: "relative", top:"-10%",left:"15%" }}>
             <img
               src={perfil}
               alt="perfil"
-              style={{ width: "100%", zIndex: "1500", position: "absolute" }}
+              style={{ height:"120%", zIndex: "1500", position: "absolute"}}
             />
           </div>
         </Img>
