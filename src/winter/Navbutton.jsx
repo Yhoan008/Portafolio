@@ -13,20 +13,17 @@ const Ul = styled.ul`
   display: flex;
   align-items: center;
   right: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
   padding: 0;
   font-family: "Lilita One", cursive;
   text-align: center;
-  transition: 0.5s;
+  transition: 0.25s;
   @media (max-width: 1000px) {
     overflow: hidden;
-    background-color: ${color.blueDark};
+    background-color: gray;
     filter: opacity(0.8);
     flex-direction: column;
-    rigth: 0px;
-    top: -5px;
-    border-radius: 20px;
+    right:0px;
+    top: -15px;
   }
 `;
 
@@ -37,7 +34,6 @@ const Li = styled.li`
   color: white;
   cursor: pointer;
   padding: 20px 10px;
-  border-radius: 20px;
   &:hover {
     text-decoration-line: line-through;
   }
@@ -56,8 +52,8 @@ const Button = styled.div`
   width: 45px;
   height: 45px;
   position: absolute;
-  right: 3px;
-  top: 3px;
+  right: 13px;
+  top: 13px;
   background-color: ${color.red};
   z-index: 1600;
   cursor: pointer;
@@ -74,8 +70,8 @@ function Minnav({ idiom, changeidiom }) {
   };
 
   const ulstyle = {
-    width: `${active == true ? "80%" : "0px"}`,
-    height: `${active == true ? "500px" : "0px"}`,
+    width: `${active == true ? "50%" : "0px"}`,
+    height: `${active == true ? "100vh" : "0px"}`,
     overflow: `${active == true ? "hidden" : "visible"}`,
   };
 

@@ -1,17 +1,22 @@
 import React, { Component } from "react";
 import { CloudMove } from "./Skills";
-import Wait from "./Wait";
+import { color } from "../color";
+import icon from './../assets/tuerca.png';
 
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 const Container = styled.div`
   position: relative;
   width: 100%;
   padding-top: 100px;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color:${color.blueDark} ;
 `;
+
+
 
 export default class Proyects extends Component {
   render() {
@@ -47,6 +52,24 @@ const Cub = styled.div`
   width:400px;
   height:400px;
   background-color: gray;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  
+`;
+
+const animate = keyframes`
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+`;
+
+const Img = styled.img`
+  width: 40%;
+  animation: 2s ${animate} linear infinite;
 `;
 
 function Proyect() {
@@ -63,7 +86,7 @@ function Proyect() {
         reprehenderit quis blanditiis accusantium dignissimos. Sunt aut id ipsa
       </Descrip>
       <Cub>
-        <Wait/>
+        <Img src={icon} alt="icon"  />
       </Cub>
     </Div>
   );

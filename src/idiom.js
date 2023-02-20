@@ -56,6 +56,36 @@ export const idioma = {
       }
     ],
     proyectTitle : "PROYECTOS",
+
+    contactTitle:"CONECTAR",
+    contactNet:[
+      {
+        id:"linkedin",
+        net:"Linkedin",
+        link:"https://www.linkedin.com/in/yhoan-mateo-moreno-35100a224/",
+        icon : "https://img.freepik.com/premium-vector/linkedin-icon_488108-5.jpg?w=2000"
+      },
+      {
+        id:"gitHub",
+        net:"GitHub",
+        link:"https://github.com/Yhoan008",
+        icon : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/1200px-Github-desktop-logo-symbol.svg.png"
+      },
+      {
+        id:"instagram",
+        net:"Instagram",
+        link:"https://www.instagram.com/yhoan._.bh/",
+        icon : "https://png.pngtree.com/element_our/md/20180301/md_5a9797d18f418.jpg"
+      },
+      {
+        id:"mail",
+        net:"yhoanmoreno8@gmail.com",
+        link:"yhoanmoreno8@gmail.com",
+        icon:"https://static-00.iconduck.com/assets.00/gmail-icon-512x511-fih5xfbp.png",
+        title:"Copiar en portapapeles",
+        copied:"copiado en el portapapeles"
+      }
+    ]
   },
   en: {
     navName: "Yhoan Moreno",
@@ -69,8 +99,8 @@ export const idioma = {
         text:"Skills"
       },
       {
-        id:"proyects",
-        text:"Proyects"
+        id:"projects",
+        text:"Projects"
       },
       {
         id:"contact",
@@ -113,6 +143,36 @@ export const idioma = {
         dir:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtqir0BP9vIZHy-Pvm4gdgy48MhZC3ufnBVA&usqp=CAU"
       }
     ],
-    proyectTitle : "PROYECTS"
+    proyectTitle : "PROJECTS",
+
+    contactTitle:"CONNECT",
+    contactNet:[
+      {
+        id:"linkedin",
+        net:"Linkedin",
+        link:"https://www.linkedin.com/in/yhoan-mateo-moreno-35100a224/",
+        icon : "https://img.freepik.com/premium-vector/linkedin-icon_488108-5.jpg?w=2000"
+      },
+      {
+        id:"gitHub",
+        net:"GitHub",
+        link:"https://github.com/Yhoan008",
+        icon : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/1200px-Github-desktop-logo-symbol.svg.png"
+      },
+      {
+        id:"instagram",
+        net:"Instagram",
+        link:"https://www.instagram.com/yhoan._.bh/",
+        icon : "https://png.pngtree.com/element_our/md/20180301/md_5a9797d18f418.jpg"
+      },
+      {
+        id:"mail",
+        net:"yhoanmoreno8@gmail.com",
+        link:"yhoanmoreno8@gmail.com",
+        icon:"https://static-00.iconduck.com/assets.00/gmail-icon-512x511-fih5xfbp.png",
+        title:"Copy on clipboard",
+        copied:"copied to clipboard"
+      }
+    ]
   },
 };

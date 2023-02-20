@@ -91,7 +91,6 @@ export default class About extends Component {
 
   componentDidMount() {
     this.interval = setInterval(() => {
-      console.log("hola");
       this.setState({ neon: "block" });
       setTimeout(() => {
         this.setState({ neon: "none" });

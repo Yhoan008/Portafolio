@@ -4,6 +4,7 @@ import Back from "./winter/Back";
 import About from "./winter/About";
 import Skills from "./winter/Skills";
 import Proyects from "./winter/Proyects";
+import Contact from "./winter/Contact";
 import { idioma } from "./idiom";
 
 const GlobalStyle = createGlobalStyle`
@@ -41,6 +42,8 @@ export default function App() {
       <Back idiom={idiom} changeidiom={changeidiom} />
       <About idiom={idiom} />
       <Skills idiom={idiom} />
+      <Proyects idiom={idiom} />
+      <Contact idiom={idiom} />
     </>
   );
 }

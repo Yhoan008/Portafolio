@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Clouds from "./Clouds";
-import Proyects from "./Proyects";
 import styled, { keyframes } from "styled-components";
 import { color } from "./../color";
 import titlecloud from "./../assets/titlecloud.png";
@@ -43,6 +42,7 @@ const Skillcontainer = styled.div`
 
 export default function Skills({ idiom }) {
   const [titletop, setTitletop] = useState("0");
+  const scrolldiv = useRef(null);
 
   const styleTitle = {
     position: "absolute",
@@ -72,7 +72,7 @@ export default function Skills({ idiom }) {
   // 15x = 80
 
   return (
-    <Contain id="skills">
+    <Contain id="skills" ref={scrolldiv}>
       <Clouds></Clouds>
       <div style={styleTitle}>
         <CloudMove title={idiom.skillsTitle} />
@@ -82,7 +82,6 @@ export default function Skills({ idiom }) {
           <Bar skill={skill} key={index} />
         ))}
       </Skillcontainer>
-      <Proyects idiom={idiom} />
     </Contain>
   );
 }
@@ -107,7 +106,7 @@ export function CloudMove(props) {
           textAlign: "center",
           color: "black",
           fontFamily: "Lilita One,cursive",
-          fontSize:"1.5em"
+          fontSize: "1.5em",
         }}
       >
         {props.title}
