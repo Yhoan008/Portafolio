@@ -6,6 +6,9 @@ const Contain = styled.div`
   width: auto;
   height: auto;
   margin-bottom:-4%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Back = styled.div`
@@ -18,10 +21,19 @@ const Back = styled.div`
   outline:10px solid #aaa;
 `;
 
+const Light = styled.div`
+  position: absolute;
+  filter:blur(40px);
+  width:200px;
+  height: 80px;
+  background-color:white;
+`;
+
 export default function Title({ idiom }) {
 
   return (
     <Contain>
+      {window.innerWidth < 650 ? <Light/>:""}
       <Back />
       <Text idiom={idiom} />
     </Contain>

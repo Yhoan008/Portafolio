@@ -1,13 +1,13 @@
 import React, { useState } from "react";
+import Globs from "./Globs";
 import styled from "styled-components";
-import { color } from "../color";
 
 const Contain = styled.div`
   position: relative;
   width: 100%;
-  background-color:${color.blueDark};
-  padding: 10px 50px;
-  box-sizing: border-box;
+  background-color:#666666;
+  margin:0;
+  padding: 0;
   color: white;
   font-size: 1.2em;
 `;
@@ -28,10 +28,11 @@ const Link = styled.div`
   align-items: center;
   padding: 5px 15px;
   border-radius: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
+  position:relative;
   &:hover{
     transform: scale(110%);
-    background-color: ${color.blueLight};
+    background-color: #0f00ff;
   }
 `;
 
@@ -49,7 +50,8 @@ export default function Contact({ idiom }) {
 
   return (
     <Contain id="contact">
-      <h2 style={{ fontFamily: "'Lilita One', cursive" }}>
+      <Globs/>
+      <h2 style={{ fontFamily: "'Lilita One', cursive", marginLeft:"50px", position:"relative", top:"-60px" }}>
         {idiom.contactTitle}
       </h2>
       <Boxes>
@@ -76,11 +78,11 @@ export default function Contact({ idiom }) {
               style={{ cursor: "pointer" }}
               title={net.title}
               onClick={() => {
-                navigator.clipboard.writeText("hola mundo");
+                navigator.clipboard.writeText("yhoanmoreno8@gmail.com");
                 setClip(true);
               }}
             >
-              <Clipboard clip={clip} setClip={setClip} text={net.copied} />
+              {/* <Clipboard clip={clip} setClip={setClip} text={net.copied} /> */}
               <Img>
                 <img src={net.icon} alt="icon" style={{ width: "150%" }} />
               </Img>
@@ -94,14 +96,8 @@ export default function Contact({ idiom }) {
 }
 
 const ContentClip = styled.div`
-  position: fixed;
-  bottom: 20px;
-  left: 40%;
-  font-size: 1.3em;
-  margin: auto;
-  padding: 5px;
+  position: absolute;
   background-color: white;
-  color: black;
   border: 2px dotted black;
 `;
 

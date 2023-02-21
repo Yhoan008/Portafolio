@@ -21,7 +21,7 @@ const Container = styled.div`
     flex-direction: row;
   }
   @media (max-width:650px){
-    height:1000px
+    background-image: none;
   }
 `;
 

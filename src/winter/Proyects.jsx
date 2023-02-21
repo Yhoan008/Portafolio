@@ -13,7 +13,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color:${color.blueDark} ;
+  background:linear-gradient(to bottom, ${color.blueDark} 80%, #000051 ) ;
 `;
 
 
