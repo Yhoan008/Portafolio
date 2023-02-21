@@ -52,6 +52,12 @@ export default function Back({ idiom, changeidiom }) {
     height: `${pantalla / 2}px`,
   };
 
+  useEffect(()=>{
+    if(window.innerWidth < 650){
+      setHover(true);
+    }
+  })
+
   window.addEventListener("scroll", () => {
     if (window.scrollY > 10) {
       setHover(true);

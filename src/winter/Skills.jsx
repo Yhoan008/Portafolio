@@ -38,6 +38,9 @@ const Skillcontainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  @media (max-width:700px){
+  margin-top: -25%;
+  }
 `;
 
 export default function Skills({ idiom }) {
@@ -88,8 +91,10 @@ export default function Skills({ idiom }) {
 
 const P = styled.div`
   display: block;
-  width: 20%;
-  padding: 3% 0;
+  padding: 10px 20px;
+  display:flex;
+  align-items: center;
+  box-sizing: border-box;
   background-image: url(${titlecloud});
   background-repeat: no-repeat;
   background-size: 100% 100%;
