@@ -34,22 +34,20 @@ const animatecloud = keyframes`
 const Skillcontainer = styled.div`
   width: 100%;
   position: relative;
-  margin-top: -45%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  @media (max-width:700px){
-  margin-top: -25%;
-  }
+  margin-top:30%;
 `;
 
 export default function Skills({ idiom }) {
-  const [titletop, setTitletop] = useState("0");
   const scrolldiv = useRef(null);
+  const [cloud , setCloud] = useState("0"); // min 0 max 150 rec 150 
+
+  // x = 3/8
 
   const styleTitle = {
-    position: "absolute",
-    top: `${titletop}%`,
+    position: "relative",
     width: "100%",
     height: "150px",
     textAlign: "center",
@@ -59,24 +57,26 @@ export default function Skills({ idiom }) {
     justifyContent: "center",
     transition: "1s",
     fontFamily: "Lilita One,cursive",
+    transform: `translate(0,${cloud}%)`
+    // aca hace falta agregar responsive, nube muy baja 
   };
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.scrollY < 730) {
-        setTitletop("0");
-      } else if (window.scrollY > 730 && window.scrollY < 810) {
-        setTitletop(`${(window.scrollY - 730) * (3 / 16)}`);
-      } else if (window.scrollY > 810) {
-        setTitletop(`15`);
+      let scrollcloud = scrolldiv.current.getBoundingClientRect().y;
+      if (scrollcloud > 400) {
+        setCloud("0");
+      } else if (scrollcloud < 400 && scrollcloud > 0) {
+        setCloud(`${(400 - scrollcloud) * 3/8}`)
+      } else if (scrollcloud < 0) {
+        setCloud("150")
       }
     });
   });
 
-  // 15x = 80
 
   return (
     <Contain id="skills" ref={scrolldiv}>
-      <Clouds></Clouds>
+      <Clouds/>
       <div style={styleTitle}>
         <CloudMove title={idiom.skillsTitle} />
       </div>
@@ -92,7 +92,7 @@ export default function Skills({ idiom }) {
 const P = styled.div`
   display: block;
   padding: 10px 20px;
-  display:flex;
+  display: flex;
   align-items: center;
   box-sizing: border-box;
   background-image: url(${titlecloud});
