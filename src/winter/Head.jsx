@@ -16,6 +16,14 @@ const Contain = styled.nav`
   z-index: 1500;
 `;
 
+const BackContain= styled.div`
+  position:fixed;
+  width:100%;
+  height:100%;
+  background-color: red;
+  z-index:1450;
+`;
+
 const Name = styled.div`
   display: flex;
   width:200px;

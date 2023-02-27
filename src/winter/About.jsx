@@ -28,11 +28,11 @@ const Margin = styled.div`
 
 const Img = styled.div`
   position: relative;
-  width: 50%;
+  width: 100%;
   height: 300px;
   padding: 50px 0px;
-  flex-shrink: 0;
   display:flex;
+  justify-content: center;
   @media (max-width:600px){
     width:100%;
   }
@@ -52,9 +52,10 @@ const Fond1 = styled.div`
 
 const Fond2 = styled.div`
   height: 100%;
+  margin:auto;
   position: absolute;
-  top: -2%;
-  left: 12%;
+  margin-right:10px;
+  transform: scale(110%);
 `;
 
 const Textcontain = styled.div`
@@ -117,11 +118,11 @@ export default class About extends Component {
             <img src={alas} alt="alasNeon" style={{ height: "100%" }} />
           </Fond2>
           <Fond1 />
-          <div style={{ height: "100%", position: "relative", top:"-10%",left:"15%" }}>
+          <div style={{ height: "100%", position: "absolute", width:"300px" }}>
             <img
               src={perfil}
               alt="perfil"
-              style={{ height:"120%", zIndex: "1500", position: "absolute"}}
+              style={{ height:"100%", zIndex: "1500", position: "absolute"}}
             />
           </div>
         </Img>
