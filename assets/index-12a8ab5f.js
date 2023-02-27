@@ -142,7 +142,7 @@ Error generating stack: `+o.message+`
   position: absolute;
   right: 0px;
   padding: 0;
-  top: 70px;
+  top: 95px;
   border-radius: 20px;
   background-color: #d19c8a;
   cursor: pointer;
