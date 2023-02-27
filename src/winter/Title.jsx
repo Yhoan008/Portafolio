@@ -9,6 +9,10 @@ const Contain = styled.div`
   display:flex;
   justify-content: center;
   align-items: center;
+  @media (max-width:700px){
+    width:280px;
+    height:40px;
+  }
 `;
 
 const Back = styled.div`

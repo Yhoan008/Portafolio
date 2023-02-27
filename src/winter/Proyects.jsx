@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { CloudMove } from "./Skills";
 import { color } from "../color";
+import folio from "./../assets/masteryportfolio.png";
 
 import styled from "styled-components";
 
@@ -12,10 +13,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background:linear-gradient(to bottom, ${color.blueDark} 80%, #000051 ) ;
+  background: linear-gradient(to bottom, ${color.blueDark} 80%, #000051);
 `;
-
-
 
 export default class Proyects extends Component {
   render() {
@@ -28,20 +27,31 @@ export default class Proyects extends Component {
   }
 }
 
-const Div = styled.div`
+const Link = styled.a`
   position: relative;
-  width: 50%;
-  height:30vw;
+  height: 30vw;
   border-radius: 20px;
-  border:2px solid red;
-  background-color: gray;
+  margin-top: 40px;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+  &:hover {
+    transform: scale(110%);
+  }
 `;
 
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
 
 function Proyect() {
   return (
     <>
-      <Div/>
+      <Link href="https://Yhoan008.github.io/masteryportfolio" target="_blank">
+        <Img src={folio} alt="portfolio" />
+      </Link>
     </>
   );
 }
