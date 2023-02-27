@@ -112,7 +112,7 @@ export default class About extends Component {
   render() {
     return (
       <Container id="about">
-        <Margin />
+        {window.innerWidth < 650 ? null : <Margin />}
         <Img>
           <Fond2 style={{ display: `${this.state.neon}` }}>
             <img src={alas} alt="alasNeon" style={{ height: "100%" }} />

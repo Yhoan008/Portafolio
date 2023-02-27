@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Contain = styled.div`
   position: relative;
-  width: auto;
+  max-width: 80%;
   height: auto;
   margin-bottom:-4%;
   display:flex;
@@ -12,6 +12,7 @@ const Contain = styled.div`
   @media (max-width:700px){
     width:280px;
     height:40px;
+    top:50px;
   }
 `;
 
@@ -28,8 +29,6 @@ const Back = styled.div`
 const Light = styled.div`
   position: absolute;
   filter:blur(40px);
-  width:200px;
-  height: 80px;
   background-color:white;
 `;
 
@@ -49,7 +48,6 @@ const H2 = styled.h2`
   font-weight: 900;
   font-size: 2em;
   padding: 0;
-  max-width: 300px;
   margin: 0;
   font-family: "Lilita One", cursive; // titulos
   text-align: center;
