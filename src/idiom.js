@@ -55,7 +55,7 @@ export const idioma = {
         dir:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtqir0BP9vIZHy-Pvm4gdgy48MhZC3ufnBVA&usqp=CAU"
       }
     ],
-    proyectTitle : "PROYECTOS",
+    proyectTitle : "PRACTICAS",
 
     contactTitle:"CONECTAR",
     contactNet:[
@@ -143,7 +143,7 @@ export const idioma = {
         dir:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtqir0BP9vIZHy-Pvm4gdgy48MhZC3ufnBVA&usqp=CAU"
       }
     ],
-    proyectTitle : "PROJECTS",
+    proyectTitle : "PRACTICES",
 
     contactTitle:"CONNECT",
     contactNet:[

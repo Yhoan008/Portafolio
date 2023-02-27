@@ -57,8 +57,9 @@ export default function Skills({ idiom }) {
     justifyContent: "center",
     transition: "1s",
     fontFamily: "Lilita One,cursive",
-    transform: `translate(0,${cloud}%)`
+    transform: `translate(0,${window.innerWidth < 650 ? cloud/2 : cloud}%)`
     // aca hace falta agregar responsive, nube muy baja 
+    
   };
   useEffect(() => {
     window.addEventListener("scroll", () => {
