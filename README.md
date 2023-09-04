@@ -1,2 +1,2 @@
 # Portafolio
-Portafolio personal / Mi perfil
+Portafolio personal básico y en construcción 🦾
