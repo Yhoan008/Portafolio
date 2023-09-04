@@ -52,7 +52,6 @@ export default function App() {
 
 // Agregar aprendizajes futuros
 // About poner foto animada
-// hacer efecto de nubes en skills
 // Expand cards en area de proyectos
 // Progress step con el scroll de la pagina
 // incluir audios interactivos
