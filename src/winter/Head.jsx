@@ -7,7 +7,7 @@ const Contain = styled.nav`
   position: fixed;
   top: 0;
   margin: 0;
-  width: 100%;
+  width: 100vw;
   height:70px;
   backdrop-filter: blur(2rem);
   display: flex;
