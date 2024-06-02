@@ -81,7 +81,7 @@ export const idioma = {
         id:"mail",
         net:"yhoanmoreno8@gmail.com",
         link:"yhoanmoreno8@gmail.com",
-        icon:"https://static-00.iconduck.com/assets.00/gmail-icon-512x511-fih5xfbp.png",
+        icon:"https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=000000",
         title:"Copiar en portapapeles",
         copied:"copiado en el portapapeles"
       }
