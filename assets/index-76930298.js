@@ -75,7 +75,7 @@ Error generating stack: `+o.message+`
 `;function em({idiom:e}){return C(b0,{children:C(nm,{idiom:e})})}const tm=O.h2`
   position: relative;
   font-weight: 900;
-  font-size: 2em;
+  font-size: 1.5em;
   display: inline;
   font-family: "Lilita One", cursive; // titulos
   text-align: center;
@@ -230,7 +230,7 @@ Error generating stack: `+o.message+`
 `;function Cm({pantalla:e,hover:t}){const n={zIndex:`${t==!0?-10:10}`,width:`${e+100}px`,height:`${e+100}px`,top:`-${e/3.4}px`,boxShadow:`inset 0 0 0 ${t==!0?0:e/2}px black`};return C(xm,{style:n})}const Em="/Portafolio/assets/fish-cb128d52.jpeg",Pm=O.section`
   position: relative;
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 50px;
   display: flex;
   align-items: center;
   background-color: black;
@@ -270,6 +270,7 @@ Error generating stack: `+o.message+`
   filter: blur(5rem);
 `,Tm=O.div`
   position: relative;
+  width: 100%;
   box-sizing: border-box;
   padding: 30px 10px;
   @media (max-width: 730px) {
