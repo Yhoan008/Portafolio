@@ -31,7 +31,7 @@ export default function Title({ idiom }) {
 const H2 = styled.h2`
   position: relative;
   font-weight: 900;
-  font-size: 2em;
+  font-size: 1.5em;
   display: inline;
   font-family: "Lilita One", cursive; // titulos
   text-align: center;

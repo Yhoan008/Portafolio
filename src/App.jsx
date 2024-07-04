@@ -10,12 +10,11 @@ import { idioma } from "./idiom";
 const GlobalStyle = createGlobalStyle`
   body{
     position:relative;
+    width: 100vw;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 300vh;
     background-color: black;
-    overflow-y: visible;
     overflow-x: hidden;
     font-family: 'Lilita One', cursive; // titulos
     font-family: 'Fira Sans Condensed', sans-serif; // Parrafos
@@ -37,7 +36,9 @@ export default function App() {
   }
 
   useEffect(() => {
-    window.alert("Nueva página en desarrollo, deploy prontamente...");
+    setTimeout(() => {
+      window.alert("Nueva página en desarrollo, deploy prontamente...");
+    }, 500);
   }, []);
 
   return (

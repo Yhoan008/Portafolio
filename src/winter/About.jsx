@@ -5,7 +5,7 @@ import fish from "./../assets/fish.jpeg";
 const Container = styled.section`
   position: relative;
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 50px;
   display: flex;
   align-items: center;
   background-color: black;
@@ -53,6 +53,7 @@ const Fond1 = styled.div`
 
 const Textcontain = styled.div`
   position: relative;
+  width: 100%;
   box-sizing: border-box;
   padding: 30px 10px;
   @media (max-width: 730px) {
