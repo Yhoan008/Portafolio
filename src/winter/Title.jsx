@@ -4,40 +4,25 @@ import styled from "styled-components";
 const Contain = styled.div`
   position: relative;
   max-width: 80%;
-  height: auto;
-  margin-bottom:-4%;
-  display:flex;
+  margin-bottom: -4%;
+  display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width:700px){
-    width:280px;
-    height:40px;
-    top:50px;
+  background-color: #aaa;
+  overflow: hidden;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 20px;
+  @media (max-width: 700px) {
+    width: 280px;
+    height: 40px;
+    top: 50px;
   }
 `;
 
-const Back = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #aaa;
-  filter: opacity(70%);
-  border-radius:10px;
-  outline:10px solid #aaa;
-`;
-
-const Light = styled.div`
-  position: absolute;
-  filter:blur(40px);
-  background-color:white;
-`;
-
 export default function Title({ idiom }) {
-
   return (
     <Contain>
-      {window.innerWidth < 650 ? <Light/>:""}
-      <Back />
       <Text idiom={idiom} />
     </Contain>
   );
@@ -47,8 +32,7 @@ const H2 = styled.h2`
   position: relative;
   font-weight: 900;
   font-size: 2em;
-  padding: 0;
-  margin: 0;
+  display: inline;
   font-family: "Lilita One", cursive; // titulos
   text-align: center;
 `;
@@ -91,7 +75,11 @@ function Text({ idiom }) {
   }, []);
 
   if (ind != 0) {
-    return <H2>{array.slice(0, ind)}</H2>;
+    return (
+      <div>
+        <H2>{array.slice(0, ind)}</H2>;
+      </div>
+    );
   } else {
     if (ind1 == true) {
       array = array2;

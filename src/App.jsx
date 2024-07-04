@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import Back from "./winter/Back";
 import About from "./winter/About";
@@ -35,6 +35,10 @@ export default function App() {
       setIdiom(idioma.es);
     }
   }
+
+  useEffect(() => {
+    window.alert("Nueva página en desarrollo, deploy prontamente...");
+  }, []);
 
   return (
     <>

@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
-import perfil from "./../assets/perfilFoto.png";
-import alas from "./../assets/alasNeon.png";
+import fish from "./../assets/fish.jpeg";
 
 const Container = styled.section`
   position: relative;
   width: 100%;
-  padding: 50px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   background-color: black;
@@ -31,31 +30,25 @@ const Img = styled.div`
   width: 100%;
   height: 300px;
   padding: 50px 0px;
-  display:flex;
+  display: flex;
   justify-content: center;
-  @media (max-width:600px){
-    width:100%;
+  aling-items: center;
+  @media (max-width: 600px) {
+    width: 100%;
   }
 `;
 
 const Fond1 = styled.div`
   position: absolute;
+  z-index: -10;
   top: 20%;
   left: 14%;
-  width: 60%;
+  width: 70%;
   height: 60%;
   border-radius: 50% 20%;
   background-color: #06d5e5;
   filter: opacity(50%);
   filter: blur(5rem);
-`;
-
-const Fond2 = styled.div`
-  height: 100%;
-  margin:auto;
-  position: absolute;
-  margin-right:10px;
-  transform: scale(110%);
 `;
 
 const Textcontain = styled.div`
@@ -114,15 +107,18 @@ export default class About extends Component {
       <Container id="about">
         {window.innerWidth < 650 ? null : <Margin />}
         <Img>
-          <Fond2 style={{ display: `${this.state.neon}` }}>
-            <img src={alas} alt="alasNeon" style={{ height: "100%" }} />
-          </Fond2>
           <Fond1 />
-          <div style={{ height: "100%", position: "absolute", width:"300px" }}>
+          <div
+            style={{
+              height: "100%",
+              borderRadius: "100%",
+              overflow: "hidden",
+            }}
+          >
             <img
-              src={perfil}
+              src={fish}
               alt="perfil"
-              style={{ height:"100%", zIndex: "1500", position: "absolute"}}
+              style={{ height: "100%", zIndex: "1500" }}
             />
           </div>
         </Img>

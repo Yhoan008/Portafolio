@@ -15,16 +15,16 @@ const Container = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   justify-content: space-around;
-  @media (max-width:1000px){
+  padding-bottom:20px;
+  @media (max-width: 1000px) {
     flex-direction: row;
   }
-  @media (max-width:650px){
+  @media (max-width: 650px) {
     background-image: none;
   }
 `;
-
 
 const Img = styled.div`
   position: absolute;
@@ -34,13 +34,13 @@ const Img = styled.div`
   transition: 0.2s all;
   overflow: hidden;
   z-index: 100;
-  margin-top:-10%;
-  @media (max-width:1000px){
-    margin-top:0;
-    margin-right:45%;
+  margin-top: -10%;
+  @media (max-width: 1000px) {
+    margin-top: 0;
+    margin-right: 45%;
   }
-  @media (max-width:650px){
-    display:none;
+  @media (max-width: 650px) {
+    display: none;
   }
 `;
 
@@ -52,11 +52,11 @@ export default function Back({ idiom, changeidiom }) {
     height: `${pantalla / 2}px`,
   };
 
-  useEffect(()=>{
-    if(window.innerWidth < 650){
+  useEffect(() => {
+    if (window.innerWidth < 650) {
       setHover(true);
     }
-  })
+  });
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 10) {
@@ -72,7 +72,7 @@ export default function Back({ idiom, changeidiom }) {
     <Container style={containerStyle} id="home">
       <Shadow pantalla={pantalla} hover={hover} />
       <Head hover={hover} idiom={idiom} changeidiom={changeidiom} />
-      {window.innerWidth <= 650 ? <></>:<div/>}
+      {window.innerWidth <= 650 ? <></> : <div />}
       <Img
         onMouseEnter={() => {
           setHover(true);
@@ -90,9 +90,9 @@ const ShadowStyle = styled.div`
   transition: 0.5s;
   border-radius: 50%;
   z-index: 10;
-  @media (max-width:1000px){
-    left:-30%;
-    transform:scale(130%);
+  @media (max-width: 1000px) {
+    left: -30%;
+    transform: scale(130%);
   }
 `;
 
@@ -102,7 +102,7 @@ function Shadow({ pantalla, hover }) {
     width: `${pantalla + 100}px`,
     height: `${pantalla + 100}px`,
     top: `-${pantalla / 3.4}px`,
-    boxShadow: `inset 0 0 0 ${hover == true ? 0 : pantalla / 2}px black`
+    boxShadow: `inset 0 0 0 ${hover == true ? 0 : pantalla / 2}px black`,
   };
 
   return <ShadowStyle style={shadowStyle} />;
