@@ -34,13 +34,6 @@ export default function App() {
       setIdiom(idioma.es);
     }
   }
-
-  useEffect(() => {
-    setTimeout(() => {
-      window.alert("Nueva página en desarrollo, deploy prontamente...");
-    }, 500);
-  }, []);
-
   return (
     <>
       <GlobalStyle />

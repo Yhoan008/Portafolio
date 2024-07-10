@@ -71,12 +71,12 @@ export const idioma = {
         link: "https://github.com/Yhoan008",
         icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/1200px-Github-desktop-logo-symbol.svg.png",
       },
-      {
-        id: "instagram",
-        net: "Instagram",
-        link: "https://www.instagram.com/yhoan._.bh/",
-        icon: "https://png.pngtree.com/element_our/md/20180301/md_5a9797d18f418.jpg",
-      },
+      // {
+      //   // id: "instagram",
+      //   net: "Instagram",
+      //   link: "https://www.instagram.com/yhoan._.bh/",
+      //   icon: "https://png.pngtree.com/element_our/md/20180301/md_5a9797d18f418.jpg",
+      // },
       {
         id: "mail",
         net: "yhoanmoreno8@gmail.com",
@@ -159,12 +159,12 @@ export const idioma = {
         link: "https://github.com/Yhoan008",
         icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/1200px-Github-desktop-logo-symbol.svg.png",
       },
-      {
-        id: "instagram",
-        net: "Instagram",
-        link: "https://www.instagram.com/yhoan._.bh/",
-        icon: "https://png.pngtree.com/element_our/md/20180301/md_5a9797d18f418.jpg",
-      },
+      // {
+      //   id: "instagram",
+      //   net: "Instagram",
+      //   link: "https://www.instagram.com/yhoan._.bh/",
+      //   icon: "https://png.pngtree.com/element_our/md/20180301/md_5a9797d18f418.jpg",
+      // },
       {
         id: "mail",
         net: "yhoanmoreno8@gmail.com",
