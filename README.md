@@ -1,2 +1,3 @@
 # Portafolio
-Portafolio personal básico y en construcción 🦾
+
+Primeras practicas en el desarrollo del portafolio profesional

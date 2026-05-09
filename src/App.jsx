@@ -45,16 +45,3 @@ export default function App() {
     </>
   );
 }
-
-// Pendientes:
-
-// Agregar aprendizajes futuros
-// About poner foto animada
-// Expand cards en area de proyectos
-// Progress step con el scroll de la pagina
-// incluir audios interactivos
-
-// Proyectos :
-//  Morf Effect con rick y morty
-// wave form
-// reloj analogico
