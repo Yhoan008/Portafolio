@@ -127,10 +127,10 @@ function Minnav({ idiom, changeidiom }) {
 }
 
 const IdiomButton = styled.button`
-  position: absolute;
+  position: relative;
   right: 0px;
   padding: 0;
-  top: 95px;
+  top: 0px;
   border-radius: 20px;
   background-color: #d19c8a;
   cursor: pointer;
